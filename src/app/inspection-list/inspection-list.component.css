@@ -1,0 +1,44 @@
+.table{
+    padding: 0 2rem;
+    font-size: 0.7rem;
+    width: 100%;
+    text-align: center;
+}
+
+thead {
+    background-color: #3c4565;
+    color: white;
+    cursor: pointer;
+}
+tbody {
+    background-color: white;
+}
+
+.searchTools{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    display: inline-block;
+    padding: 10rem 2rem;
+    width: 100%;
+    background-color: #e1dede;
+    height: 10px;
+}
+.container--row{
+    margin-bottom: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    margin-left: 2rem;
+    color: #32bc9b;
+}
+.container--row button{
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    background-color: #32bc9b;
+}

@@ -10,6 +10,9 @@
     color: white;
     font-weight: 600;
     padding: 1rem ;
+    margin-right:  2rem;
+    margin-left:  2rem;
+    margin-top:  2rem;
   }
 
   .nav img {

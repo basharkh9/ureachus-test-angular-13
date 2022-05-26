@@ -1,0 +1,57 @@
+<div class="content">
+  <div class="searchTools">
+    <div class="container--row">
+      <span class="title">Inspections</span>
+      <button>Greate New Item</button>
+    </div>
+    <div class="container--row">
+      <span class="title">Inspections</span>
+      <button>Greate New Item</button>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><fa-icon [icon]="faSquare"></fa-icon></th>
+        <th *ngFor="let c of columns">
+          <div class="sortable" *ngIf="c.isSortable" (click)="sortBy(c.key)">
+            {{ c.title }}
+            <fa-icon
+              *ngIf="query.sortBy === c.key"
+              [icon]="query.isSortAscending ? faSortUp : faSortDown"
+            ></fa-icon>
+          </div>
+          <div *ngIf="!c.isSortable">
+            {{ c.title }}
+          </div>
+        </th>
+        <th><fa-icon [icon]="faBoltLightning"></fa-icon></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of inspections">
+        <td>
+          <input
+            type="checkbox"
+            id="{{ i.inspectionId }}"
+            name="id"
+            value="{{ i.inspectionId }}"
+          />
+        </td>
+        <td>{{ i.inspectionNumber }}</td>
+        <td>{{ i.inspectionId }}</td>
+        <td>{{ i.certificate }}</td>
+        <td>{{ i.businessName }}</td>
+        <td>{{ i.industrySector }}</td>
+        <td>{{ i.city }}</td>
+        <td>{{ i.inspectionDate }}</td>
+        <td>{{ i.inspectionResult }}</td>
+        <td>{{ i.enabled }}</td>
+        <td>
+          <a [routerLink]="['/inspections/', i.inspectionId]">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

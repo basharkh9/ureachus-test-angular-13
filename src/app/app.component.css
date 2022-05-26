@@ -19,3 +19,9 @@
   a:hover {
     color: #125699;
   }
+
+  .content{
+    background-color: #e1dede;
+    height: 100vh;
+  }
+  

@@ -1,20 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { InspectionListComponent } from './inspection-list/inspection-list.component';
+import { InspectionService } from './services/inspection.service';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    InspectionListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: '/inspections', pathMatch: 'full' },
+      { path: 'inspections', component: InspectionListComponent },
+    ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [],
+  providers: [InspectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
