@@ -4,9 +4,21 @@
       <span class="title">Inspections</span>
       <button>Greate New Item</button>
     </div>
-    <div class="container--row">
-      <span class="title">Inspections</span>
-      <button>Greate New Item</button>
+    <div class="container--row__left">
+      <dropdown
+        class="drop--down"
+        [(ngModel)]="query.certificate"
+        [dropdown-list]="this.certificateMap"
+        (selected-item-changed)="onSelectChange($event)"
+        [place-holder]="this.getPlaceHolder('certificate')"
+      ></dropdown>
+      <dropdown
+        class="drop--down"
+        [(ngModel)]="query.cities"
+        (selected-item-changed)="onSelectChange($event)"
+        [dropdown-list]="this.citiesMap"
+        [place-holder]="this.getPlaceHolder('cities')"
+      ></dropdown>
     </div>
   </div>
   <table class="table">
@@ -30,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of inspections">
+      <tr *ngFor="let i of queryResult.inspections">
         <td>
           <input
             type="checkbox"

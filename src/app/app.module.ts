@@ -9,24 +9,34 @@ import { InspectionListComponent } from './inspection-list/inspection-list.compo
 import { InspectionService } from './services/inspection.service';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import DropdownComponent from './shared/dropdown-component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    InspectionListComponent
+    InspectionListComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/inspections', pathMatch: 'full' },
-      { path: 'inspections', component: InspectionListComponent },
-    ], { relativeLinkResolution: 'legacy' })
+    RouterModule.forRoot(
+      [
+        { path: '', redirectTo: '/inspections', pathMatch: 'full' },
+        { path: 'inspections', component: InspectionListComponent },
+      ],
+      { relativeLinkResolution: 'legacy' }
+    ),
   ],
   providers: [InspectionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
