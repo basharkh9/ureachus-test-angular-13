@@ -2,7 +2,9 @@
   <div class="searchTools">
     <div class="container--row">
       <span class="title">Inspections</span>
-      <button>Greate New Item</button>
+      <button>
+        <a routerLink="/inspections/new">Greate New Item</a>
+      </button>
     </div>
     <div class="container--row__left">
       <dropdown
@@ -61,7 +63,7 @@
         <td>{{ i.inspectionResult }}</td>
         <td>{{ i.enabled }}</td>
         <td>
-          <a [routerLink]="['/inspections/', i.inspectionId]">View</a>
+          <a [routerLink]="['/inspections/edit/', i._id]">View</a>
         </td>
       </tr>
     </tbody>

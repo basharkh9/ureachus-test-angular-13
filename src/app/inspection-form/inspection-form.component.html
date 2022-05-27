@@ -1,0 +1,117 @@
+<div class="content">
+  <div class="container">
+    <form (ngSubmit)="submit()" class="form-group">
+      <fieldset>
+        <div class="row">
+          <div class="column">
+            <input
+              type="text"
+              placeholder="Ureachus"
+              id="businessName"
+              name="businessName"
+              [(ngModel)]="inspection.businessName"
+            />
+          </div>
+          <div class="column">
+            <input
+              type="text"
+              placeholder="*Industry Name"
+              id="industrySector"
+              name="industrySector"
+              [(ngModel)]="inspection.industrySector"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <input
+              type="text"
+              placeholder="*Certificate"
+              id="certificate"
+              name="certificate"
+              [(ngModel)]="inspection.certificate"
+            />
+          </div>
+          <div class="column column-50 column-offset-25"></div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <input type="text" placeholder="Street" id="street" name="street" />
+          </div>
+          <div class="column">
+            <input
+              type="text"
+              placeholder="City"
+              id="city"
+              name="city"
+              [(ngModel)]="inspection.city"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <input
+              type="text"
+              placeholder="Zip Code"
+              id="zipCode"
+              name="zipCode"
+            />
+          </div>
+          <div class="column">
+            <input
+              type="text"
+              placeholder="Number"
+              id="number"
+              name="number"
+              [(ngModel)]="inspection.inspectionNumber"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <input
+              type="text"
+              placeholder="*ID"
+              id="id"
+              name="id"
+              [(ngModel)]="inspection.inspectionId"
+            />
+          </div>
+          <div class="column">
+            <input
+              type="date"
+              id="date"
+              name="inspectionDate"
+              value="2018-07-22"
+              min="2018-01-01"
+              max="2018-12-31"
+              [(ngModel)]="inspection.inspectionDate"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <select
+              id="inspectionResult"
+              name="ispectionResult"
+              [(ngModel)]="inspection.inspectionResult"
+            >
+              <option value="-"></option>
+              <option value="Violation Issued">Violation Issued</option>
+              <option value="No Violation Issued">No Violation Issued</option>
+              <option value="Pass">Pass</option>
+              <option value="Fail">Fail</option>
+            </select>
+          </div>
+          <div class="column column-50 column-offset-25">
+            <button class="button-clear">Cancel</button>
+            <button class="button-primary" type="submit">Save</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

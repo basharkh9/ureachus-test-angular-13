@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import DropdownComponent from './shared/dropdown-component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InspectionFormComponent } from './inspection-form/inspection-form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     InspectionListComponent,
     DropdownComponent,
+    InspectionFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot(
       [
         { path: '', redirectTo: '/inspections', pathMatch: 'full' },
+        { path: 'inspections/new', component: InspectionFormComponent },
+        { path: 'inspections/edit/:id', component: InspectionFormComponent },
         { path: 'inspections', component: InspectionListComponent },
       ],
       { relativeLinkResolution: 'legacy' }
